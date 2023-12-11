@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="image/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Contact Us</title>
+    <script>
+        function validateForm() {
+            var fullName = document.getElementById('fullName').value;
+            var email = document.getElementById('email').value;
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var religion = document.getElementById('religion').value;
+            var address = document.getElementById('address').value;
+            var hobbies = document.querySelectorAll('input[name="hobbies[]"]:checked');
+
+            // Simple validation for required fields
+            if (!fullName || !email || !username || !password || !gender || !religion || !address || hobbies.length === 0) {
+                alert('Please fill in all required fields.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <div>
+        <nav class="fixed top-0 left-0 right-0 bg-white shadow-lg z-10">
+            <div class="container ml-[400px] mx-auto flex justify-between p-1">
+                <ul class="flex space-x-6 font-bold text-zinc-500">
+                    <li class="hover:text-lime-600 pt-3"><a href="index.html">Home</a></li>
+                    <li class="hover:text-lime-600 pt-3"><a href="biodata.html">Biodata</a></li>
+                    <li class="hover:text-lime-600 pt-3"><a href="#">Contact Us</a></li>
+                    <li class="hover:text-lime-600 pt-3"><a href="ApaAjaBebas.html">Apa aja Bebas</a></li>
+                    <li class="hover:text-lime-600 pt-3"><a href="https://fti.unai.edu/">FTI UNAI</a></li>
+                    <li class="hover:text-lime-600 pt-3"><a href="https://unai.edu/">UNAI</a></li>
+                    <li><img src="image/logo-adaro.png" class="w-40" alt="Logo Adaro"></li>
+                    <li><img src="image/Tombol bahasa.png" class="w-12" alt="Tombol Bahasa"></li>
+                </ul>
+            </div>    
+        </nav>
+    </div>
+
+    <div class="bg-gray-100 p-28">
+
+    <div class="max-w-md mx-auto bg-white rounded p-8 shadow-md">
+        <h1 class="text-2xl font-bold mb-4">User Registration Form</h1>
+
+        <form>
+            <div class="mb-4">
+                <label for="fullName" class="block text-sm font-semibold text-gray-600">Full Name</label>
+                <input type="text" id="fullName" name="fullName" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-semibold text-gray-600">E-mail</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+            </div>
+
+            <div class="mb-4">
+                <label for="username" class="block text-sm font-semibold text-gray-600">Username</label>
+                <input type="text" id="username" name="username" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="block text-sm font-semibold text-gray-600">Password</label>
+                <input type="password" id="password" name="password" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-sm font-semibold text-gray-600">Gender</label>
+                <div>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="gender" value="male" class="form-radio text-blue-500">
+                        <span class="ml-2">Male</span>
+                    </label>
+                    <label class="inline-flex items-center ml-6">
+                        <input type="radio" name="gender" value="female" class="form-radio text-blue-500">
+                        <span class="ml-2">Female</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="religion" class="block text-sm font-semibold text-gray-600">Religion</label>
+                <select id="religion" name="religion" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                    <option value="islam">Islam</option>
+                    <option value="christian">Christian</option>
+                    <option value="hindu">Hindu</option>
+                    <option value="buddhist">Buddhist</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="address" class="block text-sm font-semibold text-gray-600">Address</label>
+                <textarea id="address" name="address" class="w-full px-4 py-2 border rounded-md resize-none focus:outline-none focus:border-blue-500"></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-sm font-semibold text-gray-600">Hobbies</label>
+                <div>
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" name="hobbies[]" value="reading" class="form-checkbox text-blue-500">
+                        <span class="ml-2">Reading</span>
+                    </label>
+                    <label class="inline-flex items-center ml-6">
+                        <input type="checkbox" name="hobbies[]" value="sports" class="form-checkbox text-blue-500">
+                        <span class="ml-2">Sports</span>
+                    </label>
+                    <label class="inline-flex items-center ml-6">
+                        <input type="checkbox" name="hobbies[]" value="traveling" class="form-checkbox text-blue-500">
+                        <span class="ml-2">Traveling</span>
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md">Save</button>
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <footer>
+        <div class="flex bg-green-950">
+            <div class="w-1/2 text-white ml-[200px]">
+              <h5>Kontak Kami</h5>
+              <ul class="mt-2">
+                <li><b>Financial Media & Capital Market:</b></li>
+                <li>Investor Relations Team</li>
+                <li class="text-green-700"><a href=""></a>investor.relations@adaro.com</li>
+                <li class="mt-2">Mahardika Putranto Handikusumo</li>
+                <li>Head of Corporate Secretary and ESG Division</li>
+                <li class="mt-2 text-green-700"><a href=""></a>corsec@adaro.com</li>
+                <li><b>Public & General Media:</b></li>
+                <li>Febriati Nadira</li>
+                <li>Head of Corporate Communication Division</li>
+                <li class="text-green-700"><a href=""></a>febriati.nadira@adaro.com</li><br>
+                <li>
+                <div>
+                  <div><a href="https://www.adaro.com/pages/read/10/52/Blog" class="my-4 p-2 rounded text-center text-decoration-none text-black" style="background-color: yellow; font-size: 15px;">Selengkapnya<button style="background-color: transparent; border: none;">&#129062;</button></a></div>
+                </div>
+                <br>
+                </li>
+                <li><p class="font-bold text-[10px]">Copyright © 2023 Brian sinaga.</p></li>
+            </div>
+
+            <div class="w-1/2">
+                 <h5 class="text-white">Follow Kami</h5>
+                <div class="flex mt-2">
+                <a href="https://twitter.com/adaroenergytbk?lang=en"><img src="image/twitter.png" style="width: 11%; filter: brightness(0) invert(1)" alt=""></a>
+                <a href="https://www.facebook.com/Adaro-Energy-310461172426081/"><img src="image/facebook.png" style="width: 11%; position: relative; right: 250px; filter: brightness(0) invert(1)" alt=""></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="image/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Contact US</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-white fixed-top col-sm-12">
+        <div class="container-lg justify-content-center">
+            <ul class="navbar-nav nav-link">
+                <li class="nav-item">
+                    <a href="index.html" class="text-decoration-none px-3 fw-semibold" style="color: #777;">HOME</a></li>
+                <li class="nav-item">
+                    <a href="biodata.html" class="text-decoration-none px-3 fw-semibold" style="color: #777;">BIODATA</a></li>
+                <li class="nav-item">
+                    <a href="#" class="text-decoration-none px-3 fw-semibold" style="color: #777;">CONTACT US</a></li>
+                <li class="nav-item">
+                    <a href="ApaAjaBebas.html" class="text-decoration-none px-3 fw-semibold" style="color: #777;">APA AJA BEBAS</a></li>
+                <li class="nav-item">
+                    <a href="https://fti.unai.edu/" class="text-decoration-none px-3 fw-semibold" style="color: #777;">FTI UNAI</a></li>
+                <li class="nav-item">
+                    <a href="https://unai.edu/" class="text-decoration-none px-3 fw-semibold" style="color: #777;">UNAI</a></li>
+            </ul>
+        </div>
+        <div style="padding: -20px; margin-left: -5%;">
+            <img src="image/logo-adaro.png" alt="LOGO" width="40%" height="40%">
+            <img src="image/Tombol bahasa.png" alt="" width="10%" height="10%">
+        </div>
+    </nav>
+
+    <div  class="bg-light p-5 mt-5">
+    <div class="container-md bg-white rounded p-5 shadow">
+        <h1 class="text-2xl font-bold mb-4">Contact US</h1>
+
+        <form name="contactForm" action="/action_page.php" onsubmit="return validateForm()" method="post" class="mx-auto bg-white shadow-md rounded p-4">
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Nama Lengkap:</label>
+              <input type="text" name="fullName" class="form-control mb-3">
+            </div>
+        
+            <div class="mb-3">
+              <label for="email" class="form-label">Email:</label>
+              <input type="email" name="email" class="form-control mb-3">
+            </div>
+        
+            <div class="mb-3">
+              <label for="username" class="form-label">Nama Pengguna:</label>
+              <input type="text" name="username" class="form-control mb-3">
+            </div>
+        
+            <div class="mb-3">
+              <label for="password" class="form-label">Kata Sandi:</label>
+              <input type="password" name="password" class="form-control mb-3">
+            </div>
+        
+            <div class="mb-3">
+              <label class="form-label d-block">Jenis Kelamin:</label>
+              <div class="form-check form-check-inline">
+                <input type="radio" name="gender" value="male" class="form-check-input">
+                <label class="form-check-label">Laki-laki</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="radio" name="gender" value="female" class="form-check-input">
+                <label class="form-check-label">Perempuan</label>
+              </div>
+            </div>
+        
+            <div class="mb-3">
+              <label for="religion" class="form-label">Agama:</label>
+              <select name="religion" class="form-select mb-3">
+                <option value="">Pilih</option>
+                <option value="christian">Kristen</option>
+                <option value="islam">Islam</option>
+                <option value="hindu">Hindu</option>
+                <option value="buddhist">Buddha</option>
+                <option value="other">Lainnya</option>
+              </select>
+            </div>
+        
+            <div class="mb-3">
+              <label for="address" class="form-label">Alamat:</label>
+              <input type="text" name="address" class="form-control mb-3">
+            </div>
+        
+            <div class="mb-3">
+              <label class="form-label d-block">Hobi:</label>
+              <div class="form-check form-check-inline">
+                <input type="checkbox" name="hobbies" value="reading" class="form-check-input">
+                <label class="form-check-label">Membaca</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="checkbox" name="hobbies" value="sports" class="form-check-input">
+                <label class="form-check-label">Olahraga</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="checkbox" name="hobbies" value="music" class="form-check-input">
+                <label class="form-check-label">Musik</label>
+              </div>
+            </div>
+        
+            <input type="submit" value="Submit" class="btn btn-primary">
+          </form>
+    </div>
+    </div>
+
+    <script>
+        function validateForm() {
+          // Get form inputs
+          let fullName = document.forms["contactForm"]["fullName"].value.trim();
+          let email = document.forms["contactForm"]["email"].value.trim();
+          let username = document.forms["contactForm"]["username"].value.trim();
+          let password = document.forms["contactForm"]["password"].value.trim();
+          let gender = document.querySelector('input[name="gender"]:checked');
+          let religion = document.forms["contactForm"]["religion"].value;
+          let address = document.forms["contactForm"]["address"].value.trim();
+          let hobbies = document.querySelectorAll('input[name="hobbies"]:checked');
+      
+          // Check for empty or non-selected inputs
+          if (fullName === "") {
+            alert("Please enter your full name");
+            return false;
+          }
+      
+          if (email === "") {
+            alert("Please enter your email");
+            return false;
+          }
+      
+          // Validate email format using regular expression
+          let emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!email.match(emailFormat)) {
+            alert("Invalid email format");
+            return false;
+          }
+      
+          if (username === "") {
+            alert("Please enter your username");
+            return false;
+          }
+      
+          if (password === "") {
+            alert("Please enter your password");
+            return false;
+          }
+      
+          if (gender === null) {
+            alert("Please select your gender");
+            return false;
+          }
+      
+          if (religion === "") {
+            alert("Please select your religion");
+            return false;
+          }
+      
+          if (address === "") {
+            alert("Please enter your address");
+            return false;
+          }
+      
+          if (hobbies.length === 0) {
+            alert("Please select at least one hobby");
+            return false;
+          }
+      
+          // Form is valid
+          alert("Form submitted successfully!");
+          return true;
+        }
+      </script>
+
+<footer style="width: 100%; height: 100%; background-color: #094437;">
+    <div class="row">
+      <div class="col-sm-4" style="margin-left: 200px;">
+        <h5 class="text-white">Kontak Kami</h5>
+        <ul class="list-unstyled text-white" style="font-family: 'roboto';">
+          <li><b>Financial Media & Capital Market:</b></li>
+          <li>Investor Relations Team</li>
+          <li style="color: #008733;"><a href=""></a>investor.relations@adaro.com</li><br>
+          <li>Mahardika Putranto Handikusumo</li>
+          <li>Head of Corporate Secretary and ESG Division</li>
+          <li style="color: #008733;"><a href=""></a>corsec@adaro.com</li><br>
+          <li><b>Public & General Media:</b></li>
+          <li>Febriati Nadira</li>
+          <li>Head of Corporate Communication Division</li>
+          <li style="color: #008733;"><a href=""></a>febriati.nadira@adaro.com</li><br>
+          <li>
+            <div>
+              <div><a href="https://www.adaro.com/pages/read/10/52/Blog" class="my-4 p-2 rounded text-center text-decoration-none text-black" style="background-color: yellow; font-size: 15px;">Selengkapnya<button style="background-color: transparent; border: none;">&#129062;</button></a></div>
+          </div>
+          <br>
+          </li>
+          <li><p class="fw-bold" style="font-size: 10px;">Copyright © 2023 Brian sinaga.</p></li>
+        </ul>
+      </div>
+        <div class="col-sm-4" style="margin-left: 200px;">
+          <h5 class="text-white mb-4">Follow Us</h5>
+          <div class="d-flex">
+            <a href="https://twitter.com/adaroenergytbk?lang=en"><img src="image/twitter.png" style="width: 15%; filter: brightness(0) invert(1)" alt=""></a>
+            <a href="https://www.facebook.com/Adaro-Energy-310461172426081/"><img src="image/facebook.png" style="width: 15%; position: relative; right: 180px; filter: brightness(0) invert(1)" alt=""></a>
+          </div>
+        </div>  
+    </div>
+  </footer>
+
+</body>
+</html>
